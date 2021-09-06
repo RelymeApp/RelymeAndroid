@@ -1,3 +1,3 @@
-# Relyme-For-Android
+# Relyme-Android
 
 **Relyme** is a **secure** and **instant** messsaging app. It's **simple**, **fast** and **reliable**.
