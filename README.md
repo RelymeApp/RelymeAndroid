@@ -3,7 +3,6 @@
 **Relyme** is a **secure** and **instant** messsaging app. It's **simple**, **fast** and **reliable**.
 
 
-
 # Contributing Code
 
 If you're new here, we recommend going through our issues and picking out a simple bug to fix in order to get yourself familiar.

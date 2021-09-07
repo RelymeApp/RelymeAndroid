@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <attr name="emojiSize" format="dimension" />
+    <attr name="conversations_list_toolbar_background" format="reference"/>
+
+    <attr name="emojiSize" format="dimension"/>
+    <attr name="emojiBackground" format="color|reference"/>
+    <attr name="emojiIcons" format="color|reference"/>
+    <attr name="emojiDivider" format="color|reference"/>
+
+    <declare-styleable name="EmojiButton">
+        <attr name="emojiSize"/>
+    </declare-styleable>
 
     <declare-styleable name="EmojiEditText">
         <attr name="emojiSize"/>
@@ -10,7 +19,7 @@
         <attr name="emojiSize"/>
     </declare-styleable>
 
-    <declare-styleable name="EmojiButton">
+    <declare-styleable name="EmojiAutoCompleteTextView">
         <attr name="emojiSize"/>
     </declare-styleable>
 
@@ -25,5 +34,8 @@
     <declare-styleable name="EmojiRadioButton">
         <attr name="emojiSize"/>
     </declare-styleable>
+
+    <attr name="chatAuthorBubbleColor" format="reference|color"/>
+    <attr name="chatReceiverBubbleColor" format="reference|color"/>
 
 </resources>

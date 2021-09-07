@@ -49,7 +49,7 @@ public final class IOSEmojiProvider extends IOSEmojiReplacer implements EmojiPro
 
             emojiCategories = new EmojiCategory[EmojiData.titles.length];
             for (int c = 0; c < EmojiData.titles.length; c++) {
-                emojiCategories[c] = new AXIOSEmojiCategory(c, icons[c]);
+                emojiCategories[c] = new IOSEmojiCategory(c, icons[c]);
             }
         }
     }
@@ -60,7 +60,7 @@ public final class IOSEmojiProvider extends IOSEmojiReplacer implements EmojiPro
         if (emojiCategories == null) {
             emojiCategories = new EmojiCategory[EmojiData.titles.length];
             for (int c = 0; c < EmojiData.titles.length; c++) {
-                emojiCategories[c] = new AXIOSEmojiCategory(c, icons[c]);
+                emojiCategories[c] = new IOSEmojiCategory(c, icons[c]);
             }
         }
     }
@@ -76,12 +76,12 @@ public final class IOSEmojiProvider extends IOSEmojiReplacer implements EmojiPro
 
     }
 
-    public static class AXIOSEmojiCategory implements EmojiCategory {
+    public static class IOSEmojiCategory implements EmojiCategory {
         Emoji[] DATA;
         String title;
         int icon;
 
-        public AXIOSEmojiCategory(int i, int icon) {
+        public IOSEmojiCategory(int i, int icon) {
             DATA = new Emoji[EmojiData.releaseData[i].length];
             for (int j = 0; j < EmojiData.releaseData[i].length; j++) {
                 DATA[j] = new IOSEmoji(EmojiData.releaseData[i][j]);
