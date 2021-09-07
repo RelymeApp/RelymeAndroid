@@ -12,4 +12,4 @@ Idk currently, cnhdcnuiewdjevuiecnjks
 
 Copyright 2021 Relyme
 
-Licensed under the GPLv3: http://www.gnu.org/licenses/gpl-3.0.html
+Licensed under the [The GNU General Public License v3.0](http://www.gnu.org/licenses/gpl-3.0.html).
