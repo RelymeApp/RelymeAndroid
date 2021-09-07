@@ -35,7 +35,7 @@ import lahds.relyme.R;
 import lahds.relyme.UserInterface.EmojiView.Emoji.Emoji;
 
 /**
- * Referene implementation for an EmojiAutoCompleteTextView with emoji support.
+ * Reference implementation for an EmojiAutoCompleteTextView with emoji support.
  */
 public class EmojiMultiAutoCompleteTextView extends AppCompatMultiAutoCompleteTextView {
     private float emojiSize;
