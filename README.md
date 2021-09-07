@@ -6,7 +6,9 @@
 
 # Contributing Code
 
-Idk currently, cnhdcnuiewdjevuiecnjks
+If you're new here, we recommend going through our issues and picking out a simple bug to fix in order to get yourself familiar.
+
+If not, go on add your **whacky** stuff.
 
 # License
 
