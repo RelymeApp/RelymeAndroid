@@ -7,7 +7,11 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 import lahds.relyme.R;
 import lahds.relyme.UserInterface.ActionBar.BaseFragment;
 import lahds.relyme.Utilities.NotificationCenter;
@@ -15,6 +19,8 @@ import lahds.relyme.Utilities.NotificationCenter;
 public class IntroActivity extends BaseFragment {
 
     private Context context;
+    private FloatingActionButton floatingActionButton;
+    private CircleImageView profile_imageview;
 
     public static IntroActivity newInstance() {
         return new IntroActivity();
@@ -41,6 +47,10 @@ public class IntroActivity extends BaseFragment {
         ((ViewGroup) fragmentView).addView(view);
 
         Toolbar toolbar = view.findViewById(R.id.toolbar);
+        floatingActionButton = view.findViewById(R.id.floatingActionButton);
+        profile_imageview = view.findViewById(R.id.toolbar_icon);
+
+        actionBar.setAddToContainer(false);
         initialize();
         getParentActivity().getWindow().getDecorView().setOnApplyWindowInsetsListener((view1, insets) -> {
             int marginBottom;
@@ -52,9 +62,9 @@ public class IntroActivity extends BaseFragment {
                 marginTop = insets.getSystemWindowInsetTop();
             }
             if (view1 != null) {
-                //ConstraintLayout.LayoutParams params1 = (ConstraintLayout.LayoutParams) floatingActionButton.getLayoutParams();
-                //params1.bottomMargin += marginBottom;
-                //floatingActionButton.setLayoutParams(params1);
+                ConstraintLayout.LayoutParams params1 = (ConstraintLayout.LayoutParams) floatingActionButton.getLayoutParams();
+                params1.bottomMargin += marginBottom;
+                floatingActionButton.setLayoutParams(params1);
 
                 //((LinearLayout.LayoutParams)toolbar.getLayoutParams()).topMargin = marginTop;
             }
