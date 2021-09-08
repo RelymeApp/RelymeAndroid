@@ -47,7 +47,6 @@ public class RelymeApplication extends Application {
             }
         });
         super.onCreate();
-        EmojiManager.install(this,new IOSEmojiProvider(applicationContext));
         applicationContext = this;
         AndroidUtilities.fillStatusBarHeight(applicationContext);
         applicationHandler = new Handler(applicationContext.getMainLooper());
