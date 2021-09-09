@@ -45,17 +45,18 @@ public class IntroActivity extends BaseFragment {
         fragmentView = new FrameLayout(context);
         View view = inflater.inflate(R.layout.activity_intro, (ViewGroup) fragmentView, false);
         ((ViewGroup) fragmentView).addView(view);
+        actionBar.setAddToContainer(false);
 
+        //INITIALIZE VIEWS
         Button button_next = view.findViewById(R.id.button_next);
 
-        actionBar.setAddToContainer(false);
-        initialize();
-        return fragmentView;
-    }
+        //USER INTERFACE
 
-    private void initialize() {
-        button_next.setOnClickListener((view) -> {
-            presentFragment(new HomeActivity(), false, false);
+        //GENERAL LOGIC
+        button_next.setOnClickListener(v -> {
+            presentFragment(new HomeActivity(), true, false);
         });
+
+        return fragmentView;
     }
 }
