@@ -1,6 +1,7 @@
 package lahds.relyme.UserInterface;
 
 import android.content.Context;
+import android.graphics.PorterDuff;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -23,16 +25,19 @@ import lahds.relyme.Utilities.NotificationCenter;
 public class HomeActivity extends BaseFragment {
 
     private Context context;
+    private FloatingActionButton fab;
     private LinearLayout toolbar;
-    private CircleImageView ic_avatar;
-    private LinearLayout layout_text_avatar;
+    private LinearLayout linear_main;
+    private CardView linear_avatar;
+    private LinearLayout linear_text_avatar;
     private TextView text_header;
     private ImageView ic_search;
-    private LinearLayout linear_main;
-    private RecyclerView list_chats;
-    private LinearLayout layout_no_chats;
-    private TextView text_no_chats;
-    private FloatingActionButton fab;
+    private ImageView ic_avatar;
+    private TextView text_avatar;
+    private RecyclerView list_messages;
+    private LinearLayout linear_no_messages;
+    private TextView text_no_messages;
+    private TextView text_start;
 
     public static HomeActivity newInstance() {
         return new HomeActivity();
@@ -52,50 +57,42 @@ public class HomeActivity extends BaseFragment {
 
     @Override
     public View createView(Context context) {
+
+        //BASE FRAGMENT
         this.context = context;
         LayoutInflater inflater = LayoutInflater.from(context);
         fragmentView = new FrameLayout(context);
         View view = inflater.inflate(R.layout.activity_home, (ViewGroup) fragmentView, false);
         ((ViewGroup) fragmentView).addView(view);
-
-        LinearLayout toolbar = view.findViewById(R.id.toolbar);
-        CircleImageView ic_avatar = view.findViewById(R.id.ic_avatar);
-        LinearLayout layout_text_avatar = view.findViewById(R.id.layout_text_avatar);
-        TextView text_header = view.findViewById(R.id.text_header);
-        ImageView ic_search = view.findViewById(R.id.ic_search);
-        LinearLayout layout_main = view.findViewById(R.id.layout_main);
-        RecyclerView list_chats = view.findViewById(R.id.list_chats);
-        LinearLayout layout_no_chats = view.findViewById(R.id.layout_no_chats);
-        TextView text_no_chats = view.findViewById(R.id.text_no_chats);
-        TextView text_start = view.findViewById(R.id.text_start);
-        FloatingActionButton fab = view.findViewById(R.id.fab);
-
         actionBar.setAddToContainer(false);
-        initialize();
 
-        getParentActivity().getWindow().getDecorView().setOnApplyWindowInsetsListener((view1, insets) -> {
-            int marginBottom;
-            marginBottom = insets.getSystemWindowInsetBottom() - insets.getStableInsetBottom();
-            int marginTop = insets.getSystemWindowInsetTop() - insets.getStableInsetTop();
+        //INITIALIZE VIEWS
+        fab = view.findViewById(R.id.fab);
+        toolbar = view.findViewById(R.id.toolbar);
+        linear_main = view.findViewById(R.id.linear_main);
+        linear_avatar = view.findViewById(R.id.linear_avatar);
+        linear_text_avatar = view.findViewById(R.id.linear_text_avatar);
+        text_header = view.findViewById(R.id.text_header);
+        ic_search = view.findViewById(R.id.ic_search);
+        ic_avatar = view.findViewById(R.id.ic_avatar);
+        text_avatar = view.findViewById(R.id.text_avatar);
+        list_messages = view.findViewById(R.id.list_messages);
+        linear_no_messages = view.findViewById(R.id.linear_no_messages);
+        text_no_messages = view.findViewById(R.id.text_no_messages);
+        text_start = view.findViewById(R.id.text_start);
 
-            if(marginTop == 0 | marginBottom == 0){
-                marginBottom = insets.getStableInsetBottom();
-                marginTop = insets.getSystemWindowInsetTop();
-            }
-            if (view1 != null) {
-                ConstraintLayout.LayoutParams params1 = (ConstraintLayout.LayoutParams) fab.getLayoutParams();
-                params1.bottomMargin += marginBottom;
-                fab.setLayoutParams(params1);
+        //USER INTERFACE
+        toolbar.setElevation(3f);
+        linear_text_avatar.setVisibility(View.GONE);
+        list_messages.setVisibility(View.GONE);
+        ic_search.setColorFilter(0xFF374D48, PorterDuff.Mode.MULTIPLY);
+        linear_no_messages.setVisibility(View.VISIBLE);
 
-                ((ConstraintLayout.LayoutParams)toolbar.getLayoutParams()).topMargin = marginTop;
-            }
-
-            return view1.onApplyWindowInsets(insets);
+        //GENERAL LOGIC
+        fab.setOnClickListener(v -> {
+            presentFragment(new ChatActivity(), false, false);
         });
+
         return fragmentView;
-    }
-
-    private void initialize() {
-
     }
 }
