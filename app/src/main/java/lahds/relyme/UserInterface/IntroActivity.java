@@ -53,9 +53,7 @@ public class IntroActivity extends BaseFragment {
         //USER INTERFACE
 
         //GENERAL LOGIC
-        button_next.setOnClickListener(v -> {
-            presentFragment(new HomeActivity(), true, false);
-        });
+        button_next.setOnClickListener(v -> presentFragment(new HomeActivity(), true, false));
 
         return fragmentView;
     }
