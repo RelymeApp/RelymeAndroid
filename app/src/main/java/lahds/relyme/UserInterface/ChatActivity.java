@@ -21,6 +21,8 @@ import android.widget.TextView;
 
 import lahds.relyme.R;
 import lahds.relyme.UserInterface.ActionBar.BaseFragment;
+import lahds.relyme.UserInterface.EmojiView.View.EmojiEditText;
+import lahds.relyme.UserInterface.EmojiView.View.EmojiTextView;
 import lahds.relyme.Utilities.AndroidUtilities;
 import lahds.relyme.Utilities.NotificationCenter;
 
@@ -39,10 +41,10 @@ public class ChatActivity extends BaseFragment {
     private CardView linear_avatar;
     private LinearLayout linear_text_avatar;
     private ImageView ic_avatar;
-    private TextView text_avatar;
+    private EmojiTextView text_avatar;
     private LinearLayout linear_username;
     private TextView text_status;
-    private TextView text_username;
+    private EmojiTextView text_username;
     private ImageView ic_verified;
     private LinearLayout linear_messages;
     private LinearLayout layout_bottom;
@@ -54,7 +56,7 @@ public class ChatActivity extends BaseFragment {
     private LinearLayout layout_message;
     private LinearLayout layout_send;
     private ImageView ic_emoji;
-    private EditText text_message;
+    private EmojiEditText text_message;
     private ImageView ic_camera;
     private ImageView ic_files;
     private ImageView ic_send;
