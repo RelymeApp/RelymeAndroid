@@ -14,6 +14,7 @@ import java.io.Writer;
 import lahds.relyme.UserInterface.EmojiView.IOSProvider.IOSEmojiProvider;
 import lahds.relyme.UserInterface.EmojiView.EmojiManager;
 import lahds.relyme.Utilities.AndroidUtilities;
+import lahds.relyme.UserInterface.EmojiView.IOSProvider.IOSEmojiLoader;
 
 public class RelymeApplication extends Application {
 
@@ -48,6 +49,7 @@ public class RelymeApplication extends Application {
         });
         super.onCreate();
         applicationContext = this;
+        EmojiManager.install(this, new IOSEmojiProvider(this));
         AndroidUtilities.fillStatusBarHeight(applicationContext);
         applicationHandler = new Handler(applicationContext.getMainLooper());
     }

@@ -504,14 +504,14 @@ public class EmojiManager {
     /**
      * check EmojiBase is instance of EmojiView or SingleEmojiView
      */
-    public static boolean isAXEmojiView(EmojiBase base) {
+    public static boolean isEmojiView(EmojiBase base) {
         return base instanceof EmojiView || base instanceof SingleEmojiView;
     }
 
     /**
      * check EmojiBase is instance of StickerView
      */
-    public static boolean isAXStickerView(EmojiBase base) {
+    public static boolean isStickerView(EmojiBase base) {
         return base instanceof StickerView;
     }
 
