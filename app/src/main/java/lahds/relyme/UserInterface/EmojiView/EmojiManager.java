@@ -52,10 +52,6 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * @author Amir Hossein Aghajari
- * @version 1.4.0
- */
 public class EmojiManager {
 
     private static boolean ripple = true;
